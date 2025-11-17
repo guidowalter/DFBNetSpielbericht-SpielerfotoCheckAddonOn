@@ -99,3 +99,11 @@
 .photo-checker-close:active {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+.photo-checker-disclaimer {
+  margin-top: 8px;
+  font-size: 11px;
+  opacity: 0.7;
+  font-style: italic;
+  line-height: 1.3;
+}

@@ -51,36 +51,56 @@ function showWarningBanner(results) {
   banner.id = 'photo-checker-banner';
   banner.className = results.withoutPhotos > 0 ? 'photo-checker-warning' : 'photo-checker-success';
   
+  const content = document.createElement('div');
+  content.className = 'photo-checker-content';
+  
+  const icon = document.createElement('span');
+  icon.className = 'photo-checker-icon';
+  icon.textContent = results.withoutPhotos > 0 ? '⚠️' : '✅';
+  
+  const message = document.createElement('div');
+  message.className = 'photo-checker-message';
+  
+  const closeBtnElem = document.createElement('button');
+  closeBtnElem.className = 'photo-checker-close';
+  closeBtnElem.title = 'Schließen';
+  closeBtnElem.textContent = '×';
+  
   if (results.withoutPhotos > 0) {
-    const playerList = results.missingPhotoPlayers.map(name => `<li>${name}</li>`).join('');
-    banner.innerHTML = `
-      <div class="photo-checker-content">
-        <span class="photo-checker-icon">⚠️</span>
-        <div class="photo-checker-message">
-          <strong>${results.withoutPhotos} Spieler ohne Foto${results.withoutPhotos > 1 ? 's' : ''}:</strong>
-          <ul class="photo-checker-player-list">${playerList}</ul>
-        </div>
-        <button class="photo-checker-close" title="Schließen">×</button>
-      </div>
-    `;
+    const title = document.createElement('strong');
+    title.textContent = `${results.withoutPhotos} Spieler ohne Foto${results.withoutPhotos > 1 ? 's' : ''}:`;
+    message.appendChild(title);
+    
+    const playerList = document.createElement('ul');
+    playerList.className = 'photo-checker-player-list';
+    results.missingPhotoPlayers.forEach(name => {
+      const li = document.createElement('li');
+      li.textContent = name;
+      playerList.appendChild(li);
+    });
+    message.appendChild(playerList);
   } else {
-    banner.innerHTML = `
-      <div class="photo-checker-content">
-        <span class="photo-checker-icon">✅</span>
-        <div class="photo-checker-message">
-          <strong>Alle ${results.total} Spieler haben Fotos!</strong>
-        </div>
-        <button class="photo-checker-close" title="Schließen">×</button>
-      </div>
-    `;
+    const title = document.createElement('strong');
+    title.textContent = `Alle ${results.total} Spieler haben Fotos!`;
+    message.appendChild(title);
   }
+  
+  // Add disclaimer
+  const disclaimer = document.createElement('div');
+  disclaimer.className = 'photo-checker-disclaimer';
+  disclaimer.textContent = 'Inoffizielle Erweiterung – keine Verbindung zu DFBnet GmbH oder DFB. Verwendung auf eigene Verantwortung. Diese Browser-Erweiterung dient ausschließlich als Hilfsmittel zur Unterstützung bei der Verwaltung von Spielerfotos. Die Nutzer sind selbst verantwortlich für die Kontrolle von Bildern, Spielerdaten und die Einhaltung aller Regeln im Spielbetrieb.Die Verwendung erfolgt auf eigene Verantwortung.'
+  message.appendChild(disclaimer);
+  
+  content.appendChild(icon);
+  content.appendChild(message);
+  content.appendChild(closeBtnElem);
+  banner.appendChild(content);
 
   // Insert banner at the top of the page
   document.body.insertBefore(banner, document.body.firstChild);
 
   // Add close button functionality
-  const closeBtn = banner.querySelector('.photo-checker-close');
-  closeBtn.addEventListener('click', () => {
+  closeBtnElem.addEventListener('click', () => {
     banner.remove();
   });
 

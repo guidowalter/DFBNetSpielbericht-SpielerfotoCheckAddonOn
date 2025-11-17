@@ -4,6 +4,14 @@
   "version": "1.0",
   "description": "Automatically checks if all players have photos uploaded in DFB Spielbericht pages",
   "permissions": [],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "spielbericht-photo-checker@dfbnet.org",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
   "content_scripts": [
     {
       "matches": [

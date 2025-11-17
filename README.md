@@ -20,7 +20,6 @@ Diese Browser-Erweiterung überprüft automatisch, ob alle Spieler auf DFB Spiel
    - Laden Sie die Erweiterung von GitHub als .zip herunter
    - Entspacken Sie die .zip Datei in ein Ornder Ihrer Wahl
 
-
 1. **Öffnen Sie die Erweiterungsverwaltung:**
    - Chrome: `chrome://extensions/`
    - Edge: `edge://extensions/`
