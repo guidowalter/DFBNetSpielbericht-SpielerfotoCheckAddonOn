@@ -1,0 +1,101 @@
+/* Spielbericht Photo Checker - Warning Banner Styles */
+
+#photo-checker-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.3s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.photo-checker-warning {
+  background-color: #fff3cd;
+  border-bottom: 3px solid #ffc107;
+  color: #856404;
+}
+
+.photo-checker-success {
+  background-color: #d4edda;
+  border-bottom: 3px solid #28a745;
+  color: #155724;
+}
+
+.photo-checker-content {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 12px;
+}
+
+.photo-checker-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.photo-checker-message {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.photo-checker-message strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.photo-checker-player-list {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.photo-checker-player-list li {
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+.photo-checker-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s, background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.photo-checker-close:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.photo-checker-close:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
