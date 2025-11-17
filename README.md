@@ -16,6 +16,11 @@ Diese Browser-Erweiterung überprüft automatisch, ob alle Spieler auf DFB Spiel
 
 ### Chrome / Edge / Brave
 
+0. **Herunterladen der Erweiterung**
+   - Laden Sie die Erweiterung von GitHub als .zip herunter
+   - Entspacken Sie die .zip Datei in ein Ornder Ihrer Wahl
+
+
 1. **Öffnen Sie die Erweiterungsverwaltung:**
    - Chrome: `chrome://extensions/`
    - Edge: `edge://extensions/`
@@ -27,7 +32,7 @@ Diese Browser-Erweiterung überprüft automatisch, ob alle Spieler auf DFB Spiel
 
 3. **Laden Sie die Erweiterung:**
    - Klicken Sie auf "Entpackte Erweiterung laden"
-   - Wählen Sie den Ordner `C:\Users\Public\spielbericht-photo-checker`
+   - Wählen Sie den Ordner den Sie in Schritt 0. gewählt haben
    - Klicken Sie auf "Ordner auswählen"
 
 4. **Fertig!**
