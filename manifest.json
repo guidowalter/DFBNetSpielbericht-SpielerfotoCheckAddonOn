@@ -1,9 +1,17 @@
 {
   "manifest_version": 3,
   "name": "Spielbericht Photo Checker",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Automatically checks if all players have photos uploaded in DFB Spielbericht pages",
-  "permissions": [],
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Kadercheck – Einstellungen",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    }
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "spielbericht-photo-checker@dfbnet.org",

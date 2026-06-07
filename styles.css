@@ -107,3 +107,44 @@
   font-style: italic;
   line-height: 1.3;
 }
+
+/* =============================================================================
+   KADERCHECK – Einsatz-Badges
+   ============================================================================= */
+
+.kc-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Kein Einsatz in höherer Mannschaft – neutral/grün */
+.kc-badge--ok {
+  background-color: rgba(220, 252, 231, 0.9);
+  border: 1px solid #86efac;
+  color: #14532d;
+}
+
+/* Einsatz in mehreren Mannschaften – Hinweis für Trainer */
+.kc-badge--warn {
+  background-color: rgba(254, 243, 199, 0.95);
+  border: 1px solid #fcd34d;
+  color: #78350f;
+}
+
+.kc-badge__icon {
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.kc-badge__text {
+  flex: 1;
+  word-break: break-word;
+}
